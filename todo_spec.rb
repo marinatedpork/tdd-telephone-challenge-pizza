@@ -26,5 +26,21 @@ describe Task do
       expect(task.status).to eq("complete")
     end
   end
+
+  describe "#mark_as_incomplete!" do
+    it 'should mark a task as incomplete' do
+      task.mark_as_incomplete!
+      expect(task.status).to eq("incomplete")
+    end
+  end
+
+  describe "#complete?" do
+    it 'should return a boolean to represent status of the task' do
+      task.mark_as_complete!
+      expect(task.complete?).to eq(true)
+      task.mark_as_incomplete!
+      expect(task.complete?).to eq(false)
+    end
+  end
 end
 
