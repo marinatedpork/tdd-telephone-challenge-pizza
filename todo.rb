@@ -24,3 +24,12 @@ class Task
 
 
 end
+
+class TodoList
+  attr_reader :title, :tasks
+  def initialize(title)
+    @title = title
+    @tasks = []
+  end
+
+end
