@@ -1,4 +1,5 @@
 require 'rspec'
+require_relative 'pizza'
 
 describe 'Pizza' do
   let(:pizza) {Pizza.new("Pizza de Giovanni")}
