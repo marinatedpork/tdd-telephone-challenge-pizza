@@ -33,10 +33,26 @@ describe 'Pizza' do
       pizza.should respond_to(:required_bake_time)
     end
 
-    it 'returns 900 plus the maximum bake time of all its toppings' do
-      expect(pizza.required_bake_time).to be > 900
+    it 'returns a required bake time that is 900 plus the maximum bake time of its toppings' do
+      topping_one = Topping.new("tomato", 50)
+      topping_one = Topping.new("cheese", 70)
+      topping_one = Topping.new("sausage", 100)
+      expect(pizza.required_bake_time).to eq(1000)
     end
 
+  end
+
+end
+
+describe 'Topping' do
+  let(:tomato) {Topping.new("tomato", 50) }
+
+  it 'has a name' do
+    expect(tomato.name).to be_a String
+  end
+
+  it 'has a required_bake_time' do
+    expect(tomato.required_bake_time).to be_an Integer
   end
 
 end
