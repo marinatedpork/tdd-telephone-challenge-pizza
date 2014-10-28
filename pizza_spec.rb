@@ -27,7 +27,7 @@ describe 'Pizza' do
     pizza.should respond_to(:toppings)
   end
 
-  describe "required_bake_time" do
+  describe "#required_bake_time" do
 
     it 'has a required_bake_time' do
       pizza.should respond_to(:required_bake_time)
