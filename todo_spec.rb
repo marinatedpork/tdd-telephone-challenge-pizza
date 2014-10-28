@@ -54,5 +54,22 @@ describe TodoList do
   it 'should initialze with no tasks' do
     expect(todo_list.tasks).to eq([])
   end
+
+  before :each do
+    task1 = Task.new("first title", "first description")
+    task2 = Task.new("second title", "second description")
+    task3 = Task.new("third title", "third description")
+  end
+
+  describe "#add_task" do
+    it 'should add a task' do
+      todo_list.add_task(task1)
+      expect(todo_list.tasks).to match_array([task1])
+      todo_list.add_task(task2)
+      expect(todo_list.tasks).to match_array([task1, task2])
+      todo_list.add_task(task3)
+      expect(todo_list.tasks).to match_array([task1, task2, task3])
+    end
+  end
 end
 
