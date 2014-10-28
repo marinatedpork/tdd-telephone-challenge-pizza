@@ -20,4 +20,11 @@ describe Task do
     expect(task.timestamp).to be_a(Date)
   end
 
+  describe "#mark_as_complete!"
+    it 'should mark a task as complete' do
+      task.mark_as_complete!
+      expect(task.status).to eq("complete")
+    end
+  end
 end
+
