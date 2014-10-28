@@ -44,3 +44,15 @@ describe Task do
   end
 end
 
+describe TodoList do
+  let(:todo_list) { TodoList.new("Sample title") }
+
+  it 'should have a title' do
+    expect(todo_list.title).to eq("Sample title")
+  end
+
+  it 'should initialze with no tasks' do
+    expect(todo_list.tasks).to eq([])
+  end
+end
+
